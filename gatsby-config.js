@@ -162,21 +162,25 @@ module.exports = {
                 path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
               }
             ) {
-              edges {
-                node {
-                  path
-                }
+              nodes {
+                path
               }
             }
           }
         `,
         output: "/sitemap.xml",
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map((edge) => ({
-            url: site.siteMetadata.siteUrl + edge.node.path,
+        resolvePages: ({ allSitePage }) => {
+          console.log(allSitePage.nodes);
+          return allSitePage.nodes;
+        },
+        serialize: ({ path }) => {
+          console.log(path);
+          return {
+            url: path,
             changefreq: "daily",
             priority: 0.7,
-          })),
+          };
+        },
       },
     },
     {
