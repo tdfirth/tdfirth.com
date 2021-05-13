@@ -11,7 +11,7 @@ const Sidebar = ({ isIndex }) => {
   const gatsbyImageData = useProfilePicture();
 
   return (
-    <div className="w-full border-r border-gray-100">
+    <div className="w-full border-b md:border-b-0 md:border-r md:max-w-xs border-gray-100">
       <div className="relative p-8">
         <Author
           author={author}

@@ -1,1 +1,1 @@
-import "./assets/global.css";
+import "./static/global.css";

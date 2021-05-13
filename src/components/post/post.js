@@ -1,23 +1,24 @@
 import React from "react";
-import { Link } from "gatsby";
 import Author from "./author";
 import Content from "./content";
 import Meta from "./meta";
 import Tags from "./tags";
+import Pill from "./pill";
 
 const Post = ({ post }) => {
-  const { html } = post;
+  console.log(post);
+  const { body } = post;
   const { tagSlugs } = post.fields;
   const { tags, title, date } = post.frontmatter;
 
   return (
-    <div className="">
-      <Link className="" to="/">
+    <div className="py-8 max-w-xl">
+      <Pill className={`lg:absolute lg:left-12 lg:top-8`} to="/">
         All Articles
-      </Link>
+      </Pill>
 
-      <div className="">
-        <Content body={html} title={title} />
+      <div className="py-8">
+        <Content body={body} title={title} />
       </div>
 
       <div className="">

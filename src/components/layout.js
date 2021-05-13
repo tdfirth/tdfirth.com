@@ -9,7 +9,7 @@ const Layout = ({ children, title, description, socialImage = "" }) => {
 
   return (
     <div className="min-h-screen min-w-screen flex items-baseline">
-      <div className="grid grid-flow-col grid-cols-2 max-w-3xl mx-auto">
+      <div className="grid grid-flow-row md:grid-flow-col md:max-w-6xl mx-auto">
         <Helmet>
           <html lang="en" />
           <title>{title}</title>

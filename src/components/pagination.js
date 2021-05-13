@@ -8,26 +8,26 @@ const Pagination = ({
   hasNextPage,
   hasPrevPage,
 }) => {
-  // TODO sort out prev/next class names
-  // const prevClassName = cx({
-  //   "pagination__prev-link": true,
-  //   "pagination__prev-link--disable": !hasPrevPage,
-  // });
-
-  // const nextClassName = cx({
-  //   "pagination__next-link": true,
-  //   "pagination__next-link--disable": !hasNextPage,
-  // });
+  const prevClass = paginationClass(hasPrevPage);
+  const nextClass = paginationClass(hasNextPage);
 
   return (
-    <div className="">
-      <div className="">
-        <Link rel="prev" to={hasPrevPage ? prevPagePath : "/"} className="">
+    <div className="pt-4 grid grid-flow-col grid-cols-2 items-center">
+      <div className="grid justify-items-start">
+        <Link
+          rel="prev"
+          to={hasPrevPage ? prevPagePath : "/"}
+          className={`${prevClass}`}
+        >
           {PAGINATION.PREV_PAGE}
         </Link>
       </div>
-      <div className="">
-        <Link rel="next" to={hasNextPage ? nextPagePath : "/"} className="">
+      <div className="grid justify-items-end">
+        <Link
+          rel="next"
+          to={hasNextPage ? nextPagePath : "/"}
+          className={`${nextClass}`}
+        >
           {PAGINATION.NEXT_PAGE}
         </Link>
       </div>
@@ -36,3 +36,8 @@ const Pagination = ({
 };
 
 export default Pagination;
+
+function paginationClass(hasPage) {
+  const color = hasPage ? "text-gray-900 hover:text-blue-600" : "text-gray-100";
+  return `text-xl ${color}`;
+}

@@ -17,12 +17,12 @@ module.exports = {
       path: "/",
     },
     {
-      label: "About me",
-      path: "/pages/about",
+      label: "About",
+      path: "/about",
     },
     {
-      label: "Contact me",
-      path: "/pages/contacts",
+      label: "Contact",
+      path: "/contact",
     },
   ],
   author: {
@@ -30,11 +30,10 @@ module.exports = {
     photo: "/photo.jpg",
     bio: "Writing about markets, data, and software.",
     contacts: {
-      email: "",
       twitter: "#",
-      github: "https://github.com/tdfirth",
+      github: "tdfirth",
       rss: "",
-      linkedin: "#",
+      linkedin: "tom-firth-cfa-7963977b",
     },
   },
 };

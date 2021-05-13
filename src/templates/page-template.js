@@ -4,11 +4,11 @@ import Layout from "../components/layout";
 import Sidebar from "../components/sidebar";
 import Page from "../components/page";
 import { useSiteMetadata } from "../hooks";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const PageTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-  const { html: pageBody } = data.markdownRemark;
-  const { frontmatter } = data.markdownRemark;
+  const { body, frontmatter } = data.mdx;
   const {
     title: pageTitle,
     description: pageDescription = "",
@@ -25,17 +25,17 @@ const PageTemplate = ({ data }) => {
     >
       <Sidebar />
       <Page title={pageTitle}>
-        <div dangerouslySetInnerHTML={{ __html: pageBody }} />
+        <MDXRenderer>{body}</MDXRenderer>
       </Page>
     </Layout>
   );
 };
 
-// TODO had to remove html prop. was not used
 export const query = graphql`
   query PageBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
+      body
       frontmatter {
         title
         date

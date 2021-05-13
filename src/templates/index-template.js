@@ -13,7 +13,7 @@ const IndexTemplate = ({ data, pageContext }) => {
   const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
     pageContext;
 
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMdx;
   const pageTitle =
     currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
@@ -35,7 +35,7 @@ const IndexTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query IndexTemplate($postsLimit: Int!, $postsOffset: Int!) {
-    allMarkdownRemark(
+    allMdx(
       limit: $postsLimit
       skip: $postsOffset
       filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }

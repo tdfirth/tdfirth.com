@@ -8,10 +8,10 @@ const Page = ({ title, children }) => {
   });
 
   return (
-    <div ref={pageRef} className="">
-      <div className="">
-        {title && <h1 className="">{title}</h1>}
-        <div className="">{children}</div>
+    <div ref={pageRef} className="py-4 px-8 md:py-8 md:px-16">
+      <div>
+        {title && <h1 className="font-bold">{title}</h1>}
+        <div>{children}</div>
       </div>
     </div>
   );

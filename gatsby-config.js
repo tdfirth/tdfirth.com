@@ -19,32 +19,67 @@ module.exports = {
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/assets`,
         name: "assets",
+        path: `${__dirname}/static`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/assets/media`,
         name: "media",
+        path: `${__dirname}/static/media`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content`,
         name: "pages",
+        path: `${__dirname}/content`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "css",
-        path: `${__dirname}/assets/css`,
+        path: `${__dirname}/static/css`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-katex",
+            options: {
+              strict: "ignore",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 960,
+              withWebp: true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-responsive-iframe",
+            options: { wrapperStyle: "margin-bottom: 1.0725rem" },
+          },
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
+          "gatsby-remark-external-links",
+        ],
       },
     },
     {
@@ -63,8 +98,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map((edge) => ({
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.edges.map((edge) => ({
                 ...edge.node.frontmatter,
                 description: edge.node.frontmatter.description,
                 date: edge.node.frontmatter.date,
@@ -74,7 +109,7 @@ module.exports = {
               })),
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   limit: 1000,
                   sort: { order: DESC, fields: [frontmatter___date] },
                   filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
@@ -103,38 +138,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          {
-            resolve: "gatsby-remark-katex",
-            options: {
-              strict: "ignore",
-            },
-          },
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 960,
-              withWebp: true,
-            },
-          },
-          {
-            resolve: "gatsby-remark-responsive-iframe",
-            options: { wrapperStyle: "margin-bottom: 1.0725rem" },
-          },
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
-          "gatsby-remark-external-links",
-        ],
-      },
-    },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
@@ -182,10 +185,8 @@ module.exports = {
         name: siteConfig.title,
         short_name: siteConfig.title,
         start_url: "/",
-        background_color: "#FFF",
-        theme_color: "#F7A046",
         display: "standalone",
-        icon: "assets/photo.jpg",
+        icon: "static/photo.jpg",
       },
     },
     {
@@ -196,7 +197,7 @@ module.exports = {
             {
               // Use cacheFirst since these don't need to be revalidated (same RegExp
               // and same reason as above)
-              urlPattern: /(\.js$|\.css$|[^:]assets\/)/,
+              urlPattern: /(\.js$|\.css$|[^:]static\/)/,
               handler: "CacheFirst",
             },
             {
@@ -220,7 +221,5 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-react-helmet",
   ],
 };

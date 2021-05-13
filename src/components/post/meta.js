@@ -2,7 +2,7 @@ import React from "react";
 
 const Meta = ({ date }) => (
   <div className="">
-    <p className="">
+    <p className="italic">
       Published{" "}
       {new Date(date).toLocaleDateString("en-US", {
         year: "numeric",
