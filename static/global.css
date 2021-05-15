@@ -31,14 +31,6 @@
     @apply font-sans;
   }
 
-  input {
-    @apply font-sans font-light;
-  }
-
-  button {
-    @apply border-none bg-none outline-none p-0;
-  }
-
   /* BITTER */
   /* fonts/bitter-100 - latin */
   @font-face {

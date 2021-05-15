@@ -6,7 +6,6 @@ import Tags from "./tags";
 import Pill from "./pill";
 
 const Post = ({ post }) => {
-  console.log(post);
   const { body } = post;
   const { tagSlugs } = post.fields;
   const { tags, title, date } = post.frontmatter;

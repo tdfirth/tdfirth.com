@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import Sidebar from "../components/sidebar";
 import Page from "../components/page";
 import { useSiteMetadata } from "../hooks";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import ProvideAndRenderMDX from "../components/mdx";
 
 const PageTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
@@ -25,7 +25,7 @@ const PageTemplate = ({ data }) => {
     >
       <Sidebar />
       <Page title={pageTitle}>
-        <MDXRenderer>{body}</MDXRenderer>
+        <ProvideAndRenderMDX mdx={body} />
       </Page>
     </Layout>
   );
