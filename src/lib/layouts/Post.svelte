@@ -21,6 +21,12 @@
 <svelte:head>
 	{#if title}
 		<title>{title}</title>
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="article" />
+	{/if}
+	{#if subtitle}
+		<meta name="description" content={subtitle} />
+		<meta property="og:description" content={subtitle} />
 	{/if}
 </svelte:head>
 
