@@ -1,0 +1,43 @@
+<svelte:head>
+	<title>On the Pleasures of Long-Form Reading in the Digital Age</title>
+</svelte:head>
+
+<article>
+	<header class="mb-12">
+		<p class="text-[var(--color-muted)] text-sm mb-3">January 28, 2025</p>
+		<h1 class="text-4xl font-medium leading-tight [text-wrap:balance] mb-4">
+			On the Pleasures of Long-Form Reading in the Digital Age
+		</h1>
+		<p class="text-xl text-[var(--color-muted)] leading-relaxed">
+			A meditation on typography, attention, and the quiet joy of words arranged well.
+		</p>
+	</header>
+
+	<div class="space-y-6 text-lg leading-[1.8]">
+
+There is something irreplaceable about the experience of reading long-form text that has been carefully typeset. The weight of each letter, the rhythm of the line breaks, the generous margins that let the words breathe—these details, often unnoticed, shape our experience profoundly.
+
+Consider how the best typography disappears. When we are absorbed in an argument or lost in a narrative, we cease to see the letters themselves. They become windows rather than walls, transparent vessels for meaning. This transparency is not accidental; it is the result of countless small decisions made well.
+
+## The Mathematics of Readability
+
+Typography is, at its heart, a mathematical art. Line length should fall between 45 and 75 characters—too short and the eye tires from constant jumping; too long and we lose our place returning to the left margin. Line height must be generous enough to prevent doubling, yet tight enough to maintain the paragraph as a visual unit.
+
+The ideal measure for body text in a single column is often cited as 66 characters. This is not arbitrary: it emerges from the biomechanics of reading, the saccadic movements of the eye, the limits of peripheral vision. Good design works *with* human physiology, not against it.
+
+> "Typography is the craft of endowing human language with a durable visual form, and thus with an independent existence."
+>
+> — Robert Bringhurst
+
+## Serif vs. Sans: A False Dichotomy
+
+The debate over serif versus sans-serif fonts for screen reading has largely resolved itself. Modern displays, with their high pixel densities, render serifs beautifully. The question is no longer *whether* serifs work on screen, but *which* serif designs are optimized for the medium.
+
+Fonts like Literata and Newsreader were designed specifically for extended reading on screens. They inherit the warmth and humanity of traditional book typography while incorporating subtle adjustments—slightly larger x-heights, more open counters, carefully tuned contrast—that make them sing on pixels rather than paper.
+
+---
+
+*This is a test post to preview typography.*
+
+	</div>
+</article>

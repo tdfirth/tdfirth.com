@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-literata: 'Literata', Georgia, serif;
+	--font-newsreader: 'Newsreader', Georgia, serif;
+
+	/* Light mode (default) - subtle rose undertone */
+	--color-surface: #FAF8F8;
+	--color-text: #3A3334;
+	--color-muted: #958B8B;
+	--color-accent: #B58181;
+}
+
+:root {
+	color-scheme: light;
+}
+
+:root.dark {
+	color-scheme: dark;
+	--color-surface: #1A1718;
+	--color-text: #E8E5E6;
+	--color-muted: #7A7374;
+	--color-accent: #D49A9A;
+}
+
+html {
+	background-color: var(--color-surface);
+	color: var(--color-text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: var(--color-surface);
+	transition: background-color 0.2s ease, color 0.2s ease;
+	font-family: var(--font-literata);
+}
+
+/* Prevent selection overlap banding */
+p, h1, h2, h3, h4, blockquote, li, span, a, em, strong, cite {
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+::selection {
+	background-color: #F0E0E0;
+}
+
+.dark ::selection {
+	background-color: #3D2E2E;
+}
