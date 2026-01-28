@@ -6,6 +6,9 @@
 
 	let { children } = $props();
 
+	// Generated at build time
+	const year = new Date().getFullYear();
+
 	let dark = $state(false);
 
 	// Initialize from localStorage on mount
@@ -67,9 +70,9 @@
 
 	<footer class="mx-auto max-w-[65ch] w-full mt-20 pt-8 border-t border-[var(--color-muted)]/20">
 		<div class="flex items-center justify-between text-sm text-[var(--color-muted)]">
-			<span>© {new Date().getFullYear()} Tom Firth</span>
+			<span>© {year} Tom Firth</span>
 			<nav class="flex items-center gap-5">
-				<a href="https://twitter.com/tdfirth" class="hover:text-[var(--color-accent)] transition-colors" target="_blank" rel="noopener noreferrer">
+				<a href="https://x.com/tdfirth" class="hover:text-[var(--color-accent)] transition-colors" target="_blank" rel="noopener noreferrer">
 					Twitter
 				</a>
 				<a href="https://github.com/tdfirth" class="hover:text-[var(--color-accent)] transition-colors" target="_blank" rel="noopener noreferrer">
