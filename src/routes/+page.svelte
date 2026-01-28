@@ -1,3 +1,7 @@
+<script lang="ts">
+	import PostLink from '$lib/components/PostLink.svelte';
+</script>
+
 <svelte:head>
 	<title>Tom Firth</title>
 </svelte:head>
@@ -10,14 +14,21 @@
 	<section>
 		<h2 class="text-sm font-medium text-[var(--color-muted)] uppercase tracking-wide mb-4">Writing</h2>
 		<ul class="space-y-4">
-			<li>
-				<a href="/posts/typography-test" class="group block">
-					<span class="text-lg group-hover:text-[var(--color-accent)] transition-colors">
-						On the Pleasures of Long-Form Reading in the Digital Age
-					</span>
-					<span class="block text-sm text-[var(--color-muted)] mt-1">January 28, 2025</span>
-				</a>
-			</li>
+			<PostLink
+				href="/posts/typography-test"
+				title="On the Pleasures of Long-Form Reading in the Digital Age"
+				date="January 28, 2025"
+			/>
+			<PostLink
+				href="/posts/mathematics-of-beauty"
+				title="The Mathematics of Beauty"
+				date="January 15, 2025"
+			/>
+			<PostLink
+				href="/posts/elements-of-style"
+				title="Elements of Style"
+				date="January 10, 2025"
+			/>
 		</ul>
 	</section>
 </div>

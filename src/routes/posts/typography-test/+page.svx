@@ -1,19 +1,8 @@
-<svelte:head>
-	<title>On the Pleasures of Long-Form Reading in the Digital Age</title>
-</svelte:head>
-
-<article>
-	<header class="mb-12">
-		<p class="text-[var(--color-muted)] text-sm mb-3">January 28, 2025</p>
-		<h1 class="text-4xl font-medium leading-tight [text-wrap:balance] mb-4">
-			On the Pleasures of Long-Form Reading in the Digital Age
-		</h1>
-		<p class="text-xl text-[var(--color-muted)] leading-relaxed">
-			A meditation on typography, attention, and the quiet joy of words arranged well.
-		</p>
-	</header>
-
-	<div class="space-y-6 text-lg leading-[1.8]">
+---
+title: On the Pleasures of Long-Form Reading in the Digital Age
+date: January 28, 2025
+subtitle: A meditation on typography, attention, and the quiet joy of words arranged well.
+---
 
 There is something irreplaceable about the experience of reading long-form text that has been carefully typeset. The weight of each letter, the rhythm of the line breaks, the generous margins that let the words breathe—these details, often unnoticed, shape our experience profoundly.
 
@@ -25,7 +14,7 @@ Typography is, at its heart, a mathematical art. Line length should fall between
 
 The ideal measure for body text in a single column is often cited as 66 characters. This is not arbitrary: it emerges from the biomechanics of reading, the saccadic movements of the eye, the limits of peripheral vision. Good design works *with* human physiology, not against it.
 
-> "Typography is the craft of endowing human language with a durable visual form, and thus with an independent existence."
+> Typography is the craft of endowing human language with a durable visual form, and thus with an independent existence.
 >
 > — Robert Bringhurst
 
@@ -38,6 +27,3 @@ Fonts like Literata and Newsreader were designed specifically for extended readi
 ---
 
 *This is a test post to preview typography.*
-
-	</div>
-</article>

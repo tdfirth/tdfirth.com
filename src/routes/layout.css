@@ -19,7 +19,7 @@
 :root.dark {
 	color-scheme: dark;
 	--color-surface: #1A1718;
-	--color-text: #E8E5E6;
+	--color-text: #D4D0D1;
 	--color-muted: #7A7374;
 	--color-accent: #D49A9A;
 }
@@ -49,4 +49,43 @@ p, h1, h2, h3, h4, blockquote, li, span, a, em, strong, cite {
 
 .dark ::selection {
 	background-color: #3D2E2E;
+}
+
+/* Center display math blocks */
+.math-display {
+	display: block;
+	text-align: center;
+	margin: 1em 0;
+}
+
+/* Blockquote styling */
+.prose blockquote p:first-of-type::before {
+	content: "\201C";
+	font-size: 2.5em;
+	line-height: 0;
+	vertical-align: -0.5em;
+	margin-right: 0.1em;
+	color: var(--color-muted);
+}
+
+.prose blockquote p:last-of-type::after {
+	content: none;
+}
+
+.prose {
+	--tw-prose-body: var(--color-text);
+	--tw-prose-headings: color-mix(in srgb, var(--color-text) 55%, var(--color-muted));
+	--tw-prose-links: var(--color-accent);
+	--tw-prose-bold: var(--color-text);
+	--tw-prose-counters: var(--color-muted);
+	--tw-prose-bullets: var(--color-muted);
+	--tw-prose-hr: var(--color-muted);
+	--tw-prose-quotes: var(--color-text);
+	--tw-prose-quote-borders: var(--color-muted);
+	--tw-prose-captions: var(--color-muted);
+	--tw-prose-code: var(--color-text);
+	--tw-prose-pre-code: var(--color-text);
+	--tw-prose-pre-bg: color-mix(in srgb, var(--color-surface) 90%, var(--color-text) 10%);
+	--tw-prose-th-borders: var(--color-muted);
+	--tw-prose-td-borders: color-mix(in srgb, var(--color-muted) 50%, transparent);
 }

@@ -1,0 +1,88 @@
+---
+title: Elements of Style
+date: January 10, 2025
+subtitle: A showcase of typographic elements for long-form content.
+---
+
+Good typography serves the reader. Every element—from headings to footnotes—should make the text easier to read, easier to understand, easier to *feel*.
+
+## Emphasis and Voice
+
+We use *italics* for emphasis, for titles of works, for words used as words. We use **bold** sparingly, for strong emphasis that demands attention. We can combine ***both*** when the moment truly calls for it.
+
+Sometimes we need `inline code` to reference a variable or function name, distinguished from the surrounding prose by its monospace form.
+
+## Lists and Structure
+
+Ordered lists work well for sequences:
+
+1. First, understand the problem
+2. Then, devise a plan
+3. Execute the plan carefully
+4. Finally, review and reflect
+
+Unordered lists suit collections without inherent order:
+
+- Clarity comes first
+- Brevity serves clarity
+- Rhythm makes reading pleasurable
+- Consistency builds trust
+
+## Code Blocks
+
+Longer code deserves its own space:
+
+```javascript
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+
+The monospace font and subtle background set code apart from prose, creating a clear visual distinction between *what we say* and *what we write for machines*.
+
+## Quotations
+
+Extended quotations deserve special treatment:
+
+> The difference between the almost right word and the right word is really a large matter—it's the difference between the lightning bug and the lightning.
+>
+> — Mark Twain
+
+The indentation and styling signal that these are borrowed words, deserving of their own space and consideration.
+
+## Horizontal Rules
+
+Sometimes we need a pause—a breath between sections that are related but distinct.
+
+---
+
+The horizontal rule creates space without creating hierarchy. It says: *stop here for a moment before continuing*.
+
+## Tables
+
+When data has structure, tables reveal it:
+
+| Element | Purpose | Use Sparingly? |
+|---------|---------|----------------|
+| Heading | Hierarchy | No |
+| Bold | Strong emphasis | Yes |
+| Italic | Gentle emphasis | Somewhat |
+| Code | Technical terms | Depends |
+
+## Nested Elements
+
+Sometimes structure requires nesting:
+
+1. Outer item
+   - Nested bullet
+   - Another nested bullet
+2. Second outer item
+   1. Nested number
+   2. Another nested number
+
+The indentation creates a visual hierarchy that mirrors the logical hierarchy of the content.
+
+---
+
+*This post exists to test and demonstrate the full range of typographic elements available in markdown.*
