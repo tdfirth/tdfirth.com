@@ -1,14 +1,21 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
+	type Heading = {
+		level: number;
+		text: string;
+		id: string;
+	};
+
 	type Props = {
 		title?: string;
 		date?: string;
 		subtitle?: string;
+		headings?: Heading[];
 		children: Snippet;
 	};
 
-	let { title, date, subtitle, children }: Props = $props();
+	let { title, date, subtitle, headings = [], children }: Props = $props();
 </script>
 
 <svelte:head>
@@ -17,9 +24,10 @@
 	{/if}
 </svelte:head>
 
-<article class="prose prose-lg max-w-none">
+<div class="relative">
+	<!-- Header -->
 	{#if title}
-		<header class="not-prose mb-12">
+		<header class="mb-12">
 			{#if date}
 				<p class="text-[var(--color-muted)] text-sm mb-3">{date}</p>
 			{/if}
@@ -33,5 +41,34 @@
 			{/if}
 		</header>
 	{/if}
-	{@render children()}
-</article>
+
+	<!-- Content -->
+	<article class="prose prose-lg max-w-none">
+		{@render children()}
+	</article>
+
+	<!-- TOC positioned absolutely to the right -->
+	{#if headings && headings.length > 0}
+		<aside class="hidden xl:block absolute top-0 left-full ml-40 2xl:ml-52 w-48 h-full">
+			<!-- Spacer to align with content start -->
+			<div class="h-[2.5rem]"></div>
+			<nav class="sticky top-20 text-right">
+				<p class="text-sm font-medium text-[var(--color-muted)] uppercase tracking-wide mb-5">
+					Contents
+				</p>
+				<ul class="space-y-3">
+					{#each headings as heading}
+						<li class={heading.level === 3 ? 'pr-4' : ''}>
+							<a
+								href="#{heading.id}"
+								class="text-base text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors leading-snug block"
+							>
+								{heading.text}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+		</aside>
+	{/if}
+</div>
