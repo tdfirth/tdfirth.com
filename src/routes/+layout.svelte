@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import { browser } from '$app/environment';
+	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
 
@@ -32,6 +33,10 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
 <div class="min-h-screen px-6 py-12 md:py-20">
 	<div class="mx-auto max-w-[65ch]">
