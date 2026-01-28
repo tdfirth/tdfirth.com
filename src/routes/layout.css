@@ -74,7 +74,7 @@ p, h1, h2, h3, h4, blockquote, li, span, a, em, strong, cite {
 
 .prose {
 	--tw-prose-body: var(--color-text);
-	--tw-prose-headings: color-mix(in srgb, var(--color-text) 55%, var(--color-muted));
+	--tw-prose-headings: var(--color-muted);
 	--tw-prose-links: var(--color-accent);
 	--tw-prose-bold: var(--color-text);
 	--tw-prose-counters: var(--color-muted);
